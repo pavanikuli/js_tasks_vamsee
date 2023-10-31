@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New User Signup</title>
+    <style>
+        #spn {
+            text-align: center;
+           
+            margin: 2px 400px;
+            box-shadow: 10px 10px 10px 10px rgb(128, 122, 122);
+        }
+        h1{
+            text-align: center;
+            font-size: 7vh;
+        }
+        input {
+            width: 50%;
+            height: 30px;
+            border-radius: 5px;
+           margin-top: 20px;
+           margin-bottom: 20px;
+            outline: none;
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1>New User Signup</h1>
+
+    <div id="spn">
+    <input type="text" oninput="signupform1()" id="fname" placeholder="FirstName">
+    <p id="sp1"></p>
+    <input type="uname" oninput="signupform2()" id="uname" placeholder="username">
+    <p id="sp2"></p>
+    <input type="email" oninput="signupform3()" id="email" placeholder="email">
+    <p id="sp3"></p>
+    <input type="password" oninput="signupform4()" id="pword" placeholder="password">
+    <p id="sp4"></p>
+    <input type="telephone" oninput="signupform5()" id="tphone" placeholder="telephone">
+    <p id="sp5"></p>
+    <input type="panCard" oninput="signupform6()" id="pcard" placeholder="panCard">
+    <p id="sp6"></p>
+    </div>
+    <script>
+        function signupform1() {
+            const fnameinput = document.getElementById('fname').value;
+            const fnameregex = /^[a-z]{5,15}$/;
+
+
+            if (fnameregex.test(fnameinput)) {
+                document.getElementById('fname').style.border = "5px solid green";
+                document.getElementById('sp1').style.display = "none";
+            } else {
+                document.getElementById('sp1').innerHTML = "FirstName should contain 5 - 15 characters";
+                document.getElementById('sp1').style.color = "red";
+                document.getElementById('fname').style.border = "5px solid red";
+                document.getElementById('sp1').style.display = "block";
+            }
+        }
+        function signupform2() {
+            const unameinput = document.getElementById('uname').value;
+            const unameregex = /^[a-z]{5,12}$/;
+
+
+
+            if (unameregex.test(unameinput)) {
+                document.getElementById('uname').style.border = "5px solid green";
+                document.getElementById('sp2').style.display = "none";
+            } else {
+                document.getElementById('sp2').innerHTML = "Username must be and contain 5 - 12 characters";
+                document.getElementById('sp2').style.color = "red";
+                document.getElementById('uname').style.border = "5px solid red";
+                document.getElementById('sp2').style.display = "block";
+            }
+        }
+        function signupform3() {
+            const emailinput = document.getElementById('email').value;
+            const emailregex = /^.+@[^@]+\.[a-z]+$/;
+            if (emailregex.test(emailinput)) {
+                document.getElementById('email').style.border = "5px solid green";
+                document.getElementById('sp3').style.display = "none";
+            } else {
+                document.getElementById('sp3').innerHTML = "Email must be a valid address, e.g. me@mydomain.com";
+                document.getElementById('sp3').style.color = "red";
+                document.getElementById('email').style.border = "5px solid red";
+                document.getElementById('sp3').style.display = "block";
+            }
+        }
+        function signupform4() {
+            const pwordinput = document.getElementById('pword').value;
+            const pwordregex = /^(?=.*[a-zA-Z0-9@_\-]).{8,20}$/;
+
+            if (pwordregex.test(pwordinput)) {
+                document.getElementById('pword').style.border = "5px solid green";
+                document.getElementById('sp4').style.display = "none";
+            } else {
+                document.getElementById('sp4').innerHTML = "Password must alphanumeri (@, _ and - are also allowed)and be 8-20 characters";
+                document.getElementById('sp4').style.color = "red";
+                document.getElementById('pword').style.border = "5px solid red";
+                document.getElementById('sp4').style.display = "block";
+            }
+        }
+        function signupform5() {
+            const tphoneinput = document.getElementById('tphone').value;
+            const tphoneregex = /^[6-9]\d{9}$/;
+
+            if (tphoneregex.test(tphoneinput)) {
+                document.getElementById('tphone').style.border = "5px solid green";
+                document.getElementById('sp5').style.display = "none";
+            } else {
+                document.getElementById('sp5').innerHTML = "Telephone must be a valid Indian telephone number (10 digits)";
+                document.getElementById('sp5').style.color = "red";
+                document.getElementById('tphone').style.border = "5px solid red";
+                document.getElementById('sp5').style.display = "block";
+            }
+        }
+        function signupform6() {
+            const pcardinput = document.getElementById('pcard').value;
+            const pcardregex = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
+
+
+            if (pcardregex.test(pcardinput)) {
+                document.getElementById('pcard').style.border = "5px solid green";
+                document.getElementById('sp6').style.display = "none";
+            } else {
+                document.getElementById('sp6').innerHTML = "Must be a valid panCard Number";
+                document.getElementById('sp6').style.color = "red";
+                document.getElementById('pcard').style.border = "5px solid red";
+                document.getElementById('sp6').style.display = "block";
+            }
+        }
+
+</script>
+</body>
+
+</html>

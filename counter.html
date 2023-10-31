@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        #big{
+           
+            margin: 10% 30%;
+            box-shadow: 10px 10px 10px 10px rgb(136, 126, 126);
+        }
+        h1{
+            text-align: center;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+        #count{
+            text-align: center;
+            font-size: 80px;
+           margin-top: 2px;
+        }
+        #small{
+           text-align: center;
+           font-size: 100px;
+          margin-top: -130px;
+        }
+        #sub{
+            width: 30px;
+            height: 30px;
+            border: 2px solid red;
+            background-color: red;
+            color: white;
+        }
+        #reset{
+            width: 70px;
+            height: 30px;
+           
+        }
+        #add{
+            width: 30px;
+            height: 30px;
+            border: 2px solid green;
+            background-color: green;
+            color: white;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div id="big">
+    <h1>Counter</h1>
+    <p id="count">0</p>
+    <div id="small">
+        <button id="sub">-</button>
+        <button id="reset">Reset</button>
+        <button id="add">+</button>
+    </div>
+    </div>
+    <script>
+        const count=document.getElementById('count');
+        const sub=document.getElementById('sub');
+        const reset=document.getElementById('reset');
+        const add=document.getElementById('add');
+
+        add.addEventListener('click', () =>{
+            count.innerHTML++;
+            applycolor();
+        });
+        sub.addEventListener('click', () =>{
+            count.innerHTML--;
+            applycolor();
+            
+        });
+        reset.addEventListener('click', () =>{
+            count.innerHTML =0;
+            applycolor();
+        });
+
+        function applycolor(){
+            if(count.innerHTML>0){
+            count.style.color="green";
+            }else if(count.innerHTML<0){
+            count.style.color="red";
+            }else {
+            count.style.color="black";
+            }
+
+        }
+        
+    </script>
+    
+</body>
+</html>
